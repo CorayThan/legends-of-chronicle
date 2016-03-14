@@ -1,0 +1,22 @@
+{
+	"name": "legends-of-chronicle-server",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {
+		"express": "4.13.x",
+		"body-parser": "1.14.x",
+		"errorhandler": "1.4.x",
+		"method-override": "2.3.x",
+		"ejs": "0.5.x",
+		"mongodb": "2.1.x",
+		"systemjs": "0.19.24"
+	},
+	"engines": {
+		"node": "5.3.x"
+	},
+	"devDependencies": {
+		"tslint": "3.2.1",
+		"typescript": "^1.8.7",
+		"typings":"^0.7.5"
+	}
+}

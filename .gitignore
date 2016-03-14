@@ -1,0 +1,19 @@
+# Logs
+logs
+*.log
+
+# Dependency directory
+node_modules
+
+# ide
+.idea
+
+# generated js files
+*.js
+*.js.map
+
+# symbolic link files
+server/shared
+
+# installed typings files
+typings

@@ -1,0 +1,27 @@
+<div class="panel-heading">
+    <h2 class="panel-title">{{card.name}}</h2>
+    <input class="form-control" [(ngModel)]="card.name" placeholder="name"/>
+</div>
+<div class="panel-body">
+    <div *ngIf="errors" class="alert alert-warning" role="alert">{{errors}}</div>
+    <ul class="list-group">
+        <li class="list-group-item"><span class="card-header">Legend</span> <span
+                class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> {{card.legendName}}
+            <select [(ngModel)]="card.legendName" title="legendName">
+                <option *ngFor="#legendName of legendValues" [value]="legendName">{{legendName}}</option>
+            </select>
+        </li>
+        <li class="list-group-item"><span class="card-header">Card Type</span> <span
+                class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Enemy
+        </li>
+        <li class="list-group-item"><span class="card-header">Attack</span> <span
+                class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> {{card.attack}}
+            <input class="form-control" [(ngModel)]="card.attack" placeholder="attack"/>
+        </li>
+    </ul>
+    <div class="well">
+        {{card.text}}
+        <textarea class="form-control" rows="3" [(ngModel)]="card.text" placeholder="text"></textarea>
+    </div>
+</div>
+<button class="btn btn-primary" (click)="onSave(card)">Save</button>

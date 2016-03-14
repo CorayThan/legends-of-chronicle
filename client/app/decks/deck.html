@@ -1,0 +1,30 @@
+<h2 class="panel-title">{{deck.name}}</h2>
+<input class="form-control" [(ngModel)]="deck.name" placeholder="name"/>
+
+<div *ngIf="errors" class="alert alert-warning" role="alert">{{errors}}</div>
+<div class="row">
+
+    <div class="col-md-9">
+        <h4>Add cards to deck</h4>
+        <div class="panel panel-default card-panel pull-left" *ngFor="#card of cards">
+            <lc-card [card]="card"></lc-card>
+            <button class="btn btn-primary" (click)="onAddCard(card)">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button class="btn btn-primary" (click)="onRemoveCard(card)">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <h4>Cards in deck</h4>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="#card of deck.cards">
+                <span class="card-header">{{card.name}}</span>
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> card cost
+            </li>
+        </ul>
+    </div>
+</div>
+
+<button class="btn btn-primary" (click)="onSave(deck)">Save</button>
